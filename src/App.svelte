@@ -4,7 +4,7 @@
 	import Input from './components/Input.svelte';
 	import List from './components/List.svelte';
 
-	let names = ['Alice', 'Bob', 'Charlie'];
+	let names = [];
 	let name: string;
 	let index = -1;
 
