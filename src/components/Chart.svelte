@@ -61,12 +61,12 @@
       <text style="transform: rotate({textAngle}rad)" x="97" y="53">{name}</text>
     </g>
   {/each}
-  <image bind:this={bottle} style="transform: rotate({rotation}rad)" href="bottle.png" x="42.5" y="5" />
+  <image bind:this={bottle} style="transform: rotate({rotation}rad)" href="/bottle.png" x="42.5" y="5" />
 </svg>
 
 <style lang="scss">
 
-	@import '../scss/colors';
+	@import '../scss/mixins';
 
   svg {
     width: 100%;
@@ -87,11 +87,7 @@
         fill: white;
       }
 
-      @for $i from 1 through length($sector-colors) {
-        &:nth-child(#{$i}) > path {
-          fill: nth($sector-colors, $i);
-        }
-      }
+      @include colored('fill', 'path');
     }
 
     > image {

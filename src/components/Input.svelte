@@ -6,21 +6,25 @@
 
   const dispatch = createEventDispatcher<{ add: string }>();
 
-  function onAdd({ currentTarget }): void {
-    if (currentTarget.value) {
-      dispatch('add', currentTarget.value);
-      currentTarget.value = '';
+  let name = '';
+
+  function onAdd(): void {
+    if (name) {
+      dispatch('add', name);
+      name = '';
     }
   }
 
 </script>
 
 <div>
-  <input type="text" {placeholder} on:change={ onAdd } />
+  <input type="text" { placeholder } bind:value={ name } on:change={ onAdd } />
+  <button on:click={ onAdd }>+</button>
 </div>
 
 <style lang="scss">
 
+  @import '../scss/colors';
   div {
     display: flex;
   }
@@ -30,9 +34,28 @@
     box-sizing: border-box;
     width: 100%;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 5px 0 0 5px;
     outline: none;
     border: none;
+  }
+
+  button {
+    border-radius: 0 5px 5px 0;
+    border: none;
+    background: $green;
+    outline: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0 15px;
+    cursor: pointer;
+
+    &:hover {
+      background: $green-hovered;
+    }
+
+  &:active {
+    background: $green-active;
+  }
   }
 
 </style>

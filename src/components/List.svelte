@@ -25,10 +25,12 @@
 <style lang="scss">
 
   @import '../scss/colors';
+  @import '../scss/mixins';
 
   ol {
     padding: 0;
     font-size: 1.2rem;
+    margin-bottom: 10px;
   }
 
   li {
@@ -39,7 +41,7 @@
     text-transform: capitalize;
 
     &.active {
-      background: $green;
+      @include colored('background');
     }
 
     > button {

@@ -1,0 +1,15 @@
+@import './colors';
+
+@mixin colored($prop, $selector: false) {
+  @for $i from 1 through length($sector-colors) {
+    @if $selector {
+      &:nth-child(#{$i}) > #{$selector} {
+        #{$prop}: nth($sector-colors, $i);
+      }
+    } @else {
+      &:nth-child(#{$i}) {
+        #{$prop}: nth($sector-colors, $i);
+      }
+    }
+  }
+}
