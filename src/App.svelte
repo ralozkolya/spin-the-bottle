@@ -64,7 +64,7 @@
 			padding: 0 15px;
 		}
 
-		@media (orientation: portrait) {
+		@media (max-width: 996px) {
 			& {
 				flex-direction: column;
 
