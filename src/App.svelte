@@ -24,8 +24,8 @@
 <main>
 	<section>
 		{#if names.length > 2}
-			<Chart {names} bind:index={index} />
 			<h1>{name}</h1>
+			<Chart {names} bind:index={index} />
 		{:else}
 			<h1>Add at least 3 names to proceed</h1>
 		{/if}
