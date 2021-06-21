@@ -12,6 +12,7 @@
     if (name) {
       name.split(',')
         .map(name => name.trim())
+        .filter(name => name)
         .forEach(name => {
           dispatch('add', name);
         });

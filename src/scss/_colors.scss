@@ -1,16 +1,12 @@
-$sector-colors: (
-  rgb(143,124,0), rgb(42, 45, 48), rgb(157,204,0), rgb(0,92,49),
-  rgb(43,206,72), rgb(240,163,255), rgb(66,102,0), rgb(76,0,92),
-  rgb(0,51,128), rgb(148,255,181), rgb(224,255,102), rgb(0,153,143),
-  rgb(25,25,25), rgb(255,255,0), rgb(255,168,187), rgb(255,255,128),
-  rgb(128,128,128), rgb(255,204,153), rgb(116,10,255), rgb(255,80,5),
-  rgb(255,0,16), rgb(94,241,242), rgb(153,63,0), rgb(255,164,5),
-  rgb(194,0,136), rgb(153,0,0)
-);
+$sector-colors: ();
 
-$green: rgb(7, 94, 54);
-$green-hovered: rgb(4, 78, 44);
-$green-active: rgb(3, 72, 41);
-$red: rgb(151, 16, 29);
-$red-hovered: rgb(136, 23, 34);
-$red-active: rgb(127, 21, 31);
+@for $i from 0 through 30 {
+  $sector-colors: append($sector-colors, hsl($i * 137.5, 70, 40));
+}
+
+$green: #02C39A;
+$green-hovered: #029C7B;
+$green-active: #01755C;
+$red: #E63946;
+$red-hovered: #B82E38;
+$red-active: #8A222A;

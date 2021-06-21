@@ -3,11 +3,11 @@
 @mixin colored($prop, $selector: false) {
   @for $i from 1 through length($sector-colors) {
     @if $selector {
-      &:nth-child(#{$i}) > #{$selector} {
+      &:nth-child(#{length($sector-colors)}n + #{$i}) > #{$selector} {
         #{$prop}: nth($sector-colors, $i);
       }
     } @else {
-      &:nth-child(#{$i}) {
+      &:nth-child(#{length($sector-colors)}n + #{$i}) {
         #{$prop}: nth($sector-colors, $i);
       }
     }

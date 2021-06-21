@@ -56,12 +56,15 @@
 
 			> h1 {
 				text-align: center;
+				text-transform: capitalize;
 			}
 		}
 
 		> aside {
 			width: 25vw;
-			padding: 0 15px;
+			max-height: 100vh;
+			overflow-y: auto;
+			padding: 15px;
 		}
 
 		@media (max-width: 996px) {
