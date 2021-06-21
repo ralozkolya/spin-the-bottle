@@ -10,7 +10,11 @@
 
   function onAdd(): void {
     if (name) {
-      dispatch('add', name);
+      name.split(',')
+        .map(name => name.trim())
+        .forEach(name => {
+          dispatch('add', name);
+        });
       name = '';
     }
   }
@@ -20,6 +24,9 @@
 <div>
   <input type="text" { placeholder } bind:value={ name } on:change={ onAdd } />
   <button on:click={ onAdd }>+</button>
+</div>
+<div>
+  <small>You can input multiple names separated with commas</small>
 </div>
 
 <style lang="scss">
@@ -53,9 +60,13 @@
       background: $green-hovered;
     }
 
-  &:active {
-    background: $green-active;
+    &:active {
+      background: $green-active;
+    }
   }
+
+  small {
+    font-size: .75rem;
   }
 
 </style>

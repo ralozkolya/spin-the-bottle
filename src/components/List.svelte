@@ -36,7 +36,7 @@
   li {
     clear: both;
     list-style-position: inside;
-    padding: 7px 5px 10px 5px;
+    padding: 7px 5px;
     border-radius: 5px;
     text-transform: capitalize;
 
@@ -54,6 +54,7 @@
       border-radius: 5px;
       font-size: 1.2rem;
       padding: 0 10px;
+      transform: translateY(-2px);
 
       &:hover {
         background: $red-hovered;

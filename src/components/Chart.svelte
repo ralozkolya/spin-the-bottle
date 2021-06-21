@@ -71,6 +71,7 @@
   svg {
     width: 100%;
     height: 100%;
+    margin: 10px 0;
     user-select: none;
     cursor: pointer;
 
