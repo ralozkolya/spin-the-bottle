@@ -1,7 +1,7 @@
 $sector-colors: ();
 
 @for $i from 0 through 30 {
-  $sector-colors: append($sector-colors, hsl($i * 137.5, 70, 40));
+  $sector-colors: append($sector-colors, hsl($i * 137.5, 70%, 40%));
 }
 
 $green: #02C39A;
